@@ -13,7 +13,7 @@ app.use(express.json()); //it is an analogy to bodyParser
 
 //connection to mongodb with mongoose
 const uri = process.env.ATLAS_URI; //saving data in dotenv and then set it to var
-mongoose.connect(uri, {useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: false});
+mongoose.connect(uri, {useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once('open', ()=>{
 	console.log('MongoDB connection established successfully');
